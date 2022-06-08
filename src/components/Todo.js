@@ -27,22 +27,18 @@ function Todo() {
         /* テストコード 終了 */
     ]);
 
-    return ( <
-            div className = "panel" >
-            <
-            div className = "panel-heading" >
-            ITSS ToDoアプリ <
-            /div> {
-            items.map(item => ( <
-                TodoItem key = { item.key }
-                item = { item }
-                />
-            ))
-        } <
-        div className = "panel-block" > { items.length }
-    items <
-        /div> < /
-        div >
+    return ( < div className = "panel" >
+        <
+        div className = "panel-heading" >
+        ITSS ToDoアプリ <
+        /div> {
+        items.map(item => ( <
+            TodoItem key = { item.key }
+            item = { item }
+            />
+        ))
+    } < div className = "panel-block" > { items.length }
+    items < /div> </div >
 );
 }
 
