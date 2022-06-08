@@ -19,13 +19,20 @@ import useStorage from '../hooks/storage';
 import { getKey } from "../lib/util";
 
 function Todo() {
-    const [items, putItems] = React.useState([
+    const [items, addItems] = React.useState([
         /* テストコード 開始 */
         { key: getKey(), text: '日本語の宿題', done: false },
         { key: getKey(), text: 'reactを勉強する', done: false },
         { key: getKey(), text: '明日の準備をする', done: false },
         /* テストコード 終了 */
     ]);
+
+    const [content, setContent] = useState('');
+
+    const onSubmit = () => {
+        addItems([...items, { key: getKey(), text: content, done: false }]);
+        setContent('');
+    }
 
     return ( < div className = "panel" >
         <
